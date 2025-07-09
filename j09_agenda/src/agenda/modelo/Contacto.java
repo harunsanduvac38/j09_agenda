@@ -1,10 +1,11 @@
 package agenda.modelo;
 
+import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Contacto {
+public class Contacto implements Comparable<Contacto>{
 
 	private int idContacto;
 	private String nombre;
@@ -110,6 +111,11 @@ public class Contacto {
 		if(getClass() != otro.getClass()) return false;
 		Contacto otra = (Contacto) otro;
 		return idContacto == otra.idContacto;
+	}
+	
+	@Override
+	public int compareTo(Contacto o) {
+		return this.getIdContacto() - o.getIdContacto();
 	}
 	
 	
