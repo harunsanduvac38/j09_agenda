@@ -28,6 +28,9 @@ public class Domicilio {
 		this.ciudad = ciudad;
 		this.provincia = provincia;
 	}
+	public Domicilio() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getTipoVia() {
 		return tipoVia;
 	}
