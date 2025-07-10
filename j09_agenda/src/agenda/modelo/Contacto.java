@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Contacto implements Comparable<Contacto>{
+public class Contacto implements Comparable<Contacto>, Cloneable{
 
 	private int idContacto;
 	private String nombre;
@@ -16,11 +16,12 @@ public class Contacto implements Comparable<Contacto>{
 	private Set<String> correos;
 	
 	
-	public Contacto(int idContacto, String nombre, String apellidos, Domicilio dom) {
+	public Contacto(int idContacto, String nombre, String apellidos, String apodo, Domicilio dom) {
 		this();
 		this.idContacto = idContacto;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
+		this.apodo = apodo;
 		this.dom = dom;
 	}
 	public Contacto() {
@@ -101,6 +102,11 @@ public class Contacto implements Comparable<Contacto>{
 	
 	
 	@Override
+	public String toString() {
+		return "Contacto ( " + idContacto + ", " + nombre + ", " + apellidos + ", "
+				+ apodo +  ")";
+	}
+	@Override
 	public int hashCode() {
 		return idContacto;
 	}
@@ -116,6 +122,12 @@ public class Contacto implements Comparable<Contacto>{
 	@Override
 	public int compareTo(Contacto o) {
 		return this.getIdContacto() - o.getIdContacto();
+	}
+	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		super.clone();
+		return new Contacto(idContacto, nombre, apellidos, apodo, dom);
 	}
 	
 	

@@ -15,9 +15,19 @@ public class Domicilio {
 	
 	
 	
-	public Domicilio() {}
 	
-	
+	public Domicilio(String tipoVia, String via, int numero, int piso, String puerta, String codigoPostal,
+			String ciudad, String provincia) {
+		super();
+		this.tipoVia = tipoVia;
+		this.via = via;
+		this.numero = numero;
+		this.piso = piso;
+		this.puerta = puerta;
+		this.codigoPostal = codigoPostal;
+		this.ciudad = ciudad;
+		this.provincia = provincia;
+	}
 	public String getTipoVia() {
 		return tipoVia;
 	}
@@ -84,8 +94,8 @@ public class Domicilio {
 
 	@Override
 	public String toString() {
-		return "Domicilio [tipoVia=" + tipoVia + ", via=" + via + ", numero=" + numero + ", piso=" + piso + ", puerta="
-				+ puerta + ", codigoPostal=" + codigoPostal + ", ciudad=" + ciudad + ", provincia=" + provincia + "]";
+		return "Domicilio (" + tipoVia + ", " + via + ", " + numero + ", " + piso + ", "
+				+ puerta + ")";
 	}
 
 	

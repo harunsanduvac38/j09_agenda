@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 import agenda.modelo.Contacto;
+import agenda.util.Contactos;
 
 
 public class ContactoDaoMem implements ContactoDao {
@@ -20,6 +21,13 @@ public class ContactoDaoMem implements ContactoDao {
 	public ContactoDaoMem() {
 		almacen = new HashMap<Integer, Contacto>();
 		proximoId = 1;
+		cargaInicial();
+	}
+	
+	private void cargaInicial() {
+		for(Contacto c : Contactos.generaContactos()) {
+			insertar(c);
+		}
 	}
 
 	@Override
@@ -35,14 +43,13 @@ public class ContactoDaoMem implements ContactoDao {
 	}
 
 	@Override
-	public boolean eliminar(int idContacto) {
-		
-		return almacen.remove(idContacto, almacen.get(idContacto));			
+	public boolean eliminar(int idContacto) {	
+		return almacen.remove(idContacto) != null;			
 	}
 
 	@Override
 	public boolean eliminar(Contacto c) {
-		return almacen.remove(c.getIdContacto(), c);
+		return eliminar(c.getIdContacto());
 	}
 
 	@Override
@@ -53,10 +60,10 @@ public class ContactoDaoMem implements ContactoDao {
 	@Override
 	public Set<Contacto> buscar(String cadena) {
 		Set<Contacto> resu = new HashSet<>();
-		
+		cadena = cadena.toLowerCase();
 		for(Contacto valor : almacen.values()) {
 
-			if(valor.getNombre().contains(cadena) || valor.getApellidos().contains(cadena) || valor.getApodo().contains(cadena)) {
+			if(valor.getNombre().toLowerCase().contains(cadena) || valor.getApellidos().toLowerCase().contains(cadena) || valor.getApodo().toLowerCase().contains(cadena)) {
 				resu.add(valor);
 			}
 		}
@@ -66,10 +73,7 @@ public class ContactoDaoMem implements ContactoDao {
 
 	@Override
 	public Set<Contacto> buscarTodos() {
-		
-		Set<Contacto> todos = new HashSet<>(almacen.values());
-		
-		return todos;
+		return new HashSet<>(almacen.values());
 	}
 //asdfas
 }
