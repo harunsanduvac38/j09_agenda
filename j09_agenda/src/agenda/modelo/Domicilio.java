@@ -1,8 +1,9 @@
 package agenda.modelo;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Domicilio {
+public class Domicilio implements Serializable {
 
 	private String tipoVia;
 	private String via;
