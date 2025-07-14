@@ -5,9 +5,11 @@ import agenda.vista.swing.VInicial;
 
 public class Main {
 	public static void main(String[] args) {
-//		new MenuPrincipal();
+		new MenuPrincipal();
 		
-		new VInicial();
+//		new VInicial();
+		
+		
 		
 	}
 
