@@ -19,7 +19,7 @@ public class ConsultarTodos {
 		System.out.println("\nTODOS LOS CONTACTOS");
 		for (Contacto contacto : todos) {
 			System.out.println(contacto.getNombre() + "\t" + contacto.getApellidos() + 
-					"\t" + contacto.getApodo() + "\t" + contacto.getTelefonos());
+					"\t" + contacto.getApodo() + "\t" + contacto.getTelefonos() + "\t" + contacto.getCorreos());
 		}
 	}
 	
