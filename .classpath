@@ -6,8 +6,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="/Users/mananas/Desktop/Documentos_de_Pablo/Modulo_III/Documentos/coneccion/commons-dbcp-1.4.jar"/>
 	<classpathentry kind="lib" path="/Users/mananas/Desktop/Documentos_de_Pablo/Modulo_III/Documentos/coneccion/commons-pool-1.5.4.jar"/>
 	<classpathentry kind="lib" path="/Users/mananas/Desktop/Documentos_de_Pablo/Modulo_III/Documentos/coneccion/mysql-connector-j-9.3.0.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/programacion/modulo3/Documentos/coneccion/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/programacion/modulo3/Documentos/coneccion/commons-pool-1.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/programacion/modulo3/Documentos/coneccion/mysql-connector-j-9.3.0.jar"/>
+>>>>>>> branch 'master' of https://github.com/harunsanduvac38/EclipseP9.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
